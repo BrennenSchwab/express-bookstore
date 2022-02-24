@@ -85,7 +85,6 @@ describe("PUT /books/:id", function () {
     const response = await request(app)
         .put(`/books/${book_isbn}`)
         .send({
-            isbn: '12233445',
             amazon_url: "https://a.co/booknew",
             author: "Brennen",
             language: "english",
@@ -103,12 +102,13 @@ describe("PUT /books/:id", function () {
     const response = await request(app)
         .put(`/books/${book_isbn}`)
         .send({
+            isbn: '12233445',
             amazon_url: "https://a.co/booknew",
             author: "Brennen",
-            language: "english",
-            pages: 500,
-            publisher: "Still None",
             extra: "error",
+            language: "english",
+            pages: 0,
+            publisher: "Still None",
             title: "Updated Book",
             year: 2022
         });

@@ -55,7 +55,7 @@ router.put("/:isbn", async function (req, res, next) {
     if ("isbn" in req.body) {
       return next({
         status: 400,
-        message: "Not allowed"
+        message: "Cant Update ISBN of this book"
       });
     }
     const validation = validate(req.body, bookSchemaUpdate);
